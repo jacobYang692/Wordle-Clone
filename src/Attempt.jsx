@@ -2,10 +2,9 @@
 import Letter from "./Letter";
 
 
-function Attempt({ className, word, selectedWord, submitted, attempts, attempt }) {
+function Attempt({ className, word, selectedWord, submitted }) {
 
-    const correctWord = selectedWord.toUpperCase().split('')
-    
+    const correctWord = selectedWord.toUpperCase().split('')    
     const letters = word.toUpperCase().split('');
 
     if(submitted) {

@@ -2,6 +2,7 @@
 
 function Letter({letter, correctWord, index}) {
 
+
     if(letter === correctWord[index]) {
         return (
             <div className="correct-letter inputted-letter">
@@ -17,7 +18,6 @@ function Letter({letter, correctWord, index}) {
             </div>
         )
     }
-    
     return (
         <div className="letter-not-in inputted-letter">
             {letter}
