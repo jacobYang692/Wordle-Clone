@@ -3,14 +3,7 @@ import './App.css'
 import Attempt from './Attempt'
 
 
-const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE',
- 'DRIVE', 'GRAPE', 'BLEND', 'CHARM', 'FROST', 'CRASH', 'SWEEP', 'FLINT',
-  'PLUCK', 'SMIRK', 'GRIME', 'SNARE', 'BLOCK', 'CRUST', 'PRISM', 'GRIST',
-   'BRAID', 'PLUMP', 'GLOOM', 'CLASP', 'SPIRE', 'SWINE', 'PLOW', 'CHARM',
-    'CRUST', 'CHIME', 'SKIRT', 'GROUT', 'GLINT', 'TRAMP', 'SNORT', 'BLISS',
-     'BLAZE', 'BRINE', 'BRAWN', 'SWISH', 'PLUMB', 'BRINK', 'CRUMB', 'DRIFT',
-      'SNARL', 'SMEAR', 'GLAZE', 'GLINT', 'FLAKE', 'SMOCK', 'FLUME', 'SCAMP',
-       'PROBE', 'SCRUM', 'BLAZE'];
+const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE', 'DRIVE'];
 const selectedWord = wordCollection[Math.floor(Math.random()*wordCollection.length)]
 
 function App() {
@@ -27,14 +20,12 @@ function App() {
   const check = (e) => {
     e.preventDefault()
     if(!wordCollection.includes(userIn.toUpperCase())) {
-      alert("Word Not in Collection")
+      alert("word not in collection")
     }
     else {
+      console.log(attempts)
       setActiveSubmit()
       setAttempt(attempt + 1);
-      if(userIn.toUpperCase() === selectedWord) {
-        alert('You Win')
-      }
     }
   }
 
@@ -44,6 +35,8 @@ function App() {
     newAttempts[attempt] = value
     setAttempts(newAttempts)
   }
+
+
 
   function setActiveSubmit() {
     if(attempt === 0) {
@@ -72,17 +65,16 @@ function App() {
         <Attempt className={attempt === 3 ? 'active' : 'inactive'} word={attempts[3]} selectedWord={selectedWord} submitted={submitted4} attempts={attempts} attempt={attempt}></Attempt>
         <Attempt className={attempt === 4 ? 'active' : 'inactive'} word={attempts[4]} selectedWord={selectedWord} submitted={submitted5} attempts={attempts} attempt={attempt}></Attempt>
       </div>
-      <div>
-        <form onSubmit={check}>
-          <input type="text"
-          required
-          value={userIn}
-          onChange={(e) => handleInputChange(e.target.value)}
-          minLength={5}
-          maxLength={5}>
-          </input>
-        </form>
-      </div>
+      <form onSubmit={check}>
+        <input type="text"
+        required
+        value={userIn}
+        
+        onChange={(e) => handleInputChange(e.target.value)}
+        minLength={5}
+        maxLength={5}>
+        </input>
+      </form>
     </div>
   )
 }
