@@ -9,6 +9,9 @@
   display: flex;
   flex-direction: column;
 }
+.input-display {
+  
+}
 
 .read-the-docs {
   color: #aaa;
@@ -28,7 +31,6 @@
   margin: 3px;
   font-size: 40px;
   background-color: #1a1a1a;
-  border-radius: 2px;
 }
 .correct-letter {
   background-color: #538d4e !important;
