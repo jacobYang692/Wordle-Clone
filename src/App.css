@@ -1,0 +1,53 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+}
+
+.read-the-docs {
+  color: #aaa;
+}
+
+.input-attempt {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-letter-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 128px;
+  width: 128px;
+  margin: 3px;
+  font-size: 40px;
+  background-color: #1a1a1a;
+  border-radius: 2px;
+}
+.correct-letter {
+  background-color: #538d4e !important;
+}
+.letter-in-word {
+  background-color: #b59f3b !important;
+}
+.letter-not-in {
+  color: white;
+}
+.inputted-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background-color: #3a3a3c;
+}
