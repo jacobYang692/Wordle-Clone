@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import Attempt from './Attempt'
+import Attempt from './components/Attempt'
+import WinModal from './components/WinModal';
 
 
 const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE', 'DRIVE'];
 const selectedWord = wordCollection[Math.floor(Math.random()*wordCollection.length)]
 
 function App() {
-
+  const [winModal, setWinModal] = useState(false)
   const [userIn, setUserIn] = useState('')
   const [submitted0, setSubmitted0] = useState(false)
   const [submitted1, setSubmitted1] = useState(false)
@@ -24,8 +25,12 @@ function App() {
       alert("word not in collection")
     }
     else {
-      console.log(attempts)
+      
       setActiveSubmit()
+      if(userIn.toUpperCase() === selectedWord) {
+        setWinModal(true)
+        console.log("winnnnnnnnn")
+      }
       setAttempt(attempt + 1);
       setUserIn('')
     }
@@ -78,6 +83,7 @@ function App() {
           <Attempt className={attempt === 4 ? 'active' : 'inactive'} word={attempts[4]} selectedWord={selectedWord} submitted={submitted4}></Attempt>
           <Attempt className={attempt === 5 ? 'active' : 'inactive'} word={attempts[5]} selectedWord={selectedWord} submitted={submitted5}></Attempt>
         </div>
+        <WinModal toggleWin={winModal} setWinModal={setWinModal}></WinModal>
         <form onSubmit={check}>
           <input type="text"
           required
