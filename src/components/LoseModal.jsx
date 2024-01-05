@@ -1,16 +1,16 @@
-function WinModal({ toggleWin, setWinModal }) { 
+function LoseModal({ toggleLose, setLoseModal }) { 
 
     const closeModal = () => {
-        setWinModal(false)
+        setLoseModal(false)
     }
 
     return (
         <>
-            {toggleWin && (
+            {toggleLose && (
                 <div className='modal'>
                     <div className="overlay" onClick={closeModal}></div>
                     <div className="modal-content">
-                        <h2>You Win HeHeHawhaw</h2>
+                        <h2>You Lose XD</h2>
                         <button className="close-modal" onClick={closeModal}>close</button>
                     </div>
                 </div>)
@@ -18,4 +18,4 @@ function WinModal({ toggleWin, setWinModal }) {
         </>
     )
 }
-export default WinModal;
+export default LoseModal;

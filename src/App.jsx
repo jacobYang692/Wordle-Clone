@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import Attempt from './components/Attempt'
-import WinModal from './components/WinModal';
+import WinModal from './components/WinModal'
+import LoseModal from './components/LoseModal'
 
 
 const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE', 'DRIVE'];
@@ -9,6 +10,7 @@ const selectedWord = wordCollection[Math.floor(Math.random()*wordCollection.leng
 
 function App() {
   const [winModal, setWinModal] = useState(false)
+  const [loseModal, setLoseModal] = useState(false)
   const [userIn, setUserIn] = useState('')
   const [submitted0, setSubmitted0] = useState(false)
   const [submitted1, setSubmitted1] = useState(false)
@@ -29,15 +31,14 @@ function App() {
       setActiveSubmit()
       if(userIn.toUpperCase() === selectedWord) {
         setWinModal(true)
-        console.log("winnnnnnnnn")
       }
       setAttempt(attempt + 1);
       setUserIn('')
     }
   }
   if(attempt === 6) {
-    setAttempt(attempt + 1)
-    alert("You Lose XD")
+    setLoseModal(true)
+    setAttempt(attempt + 1);
   }
 
   const handleInputChange = (value) => {
@@ -84,6 +85,7 @@ function App() {
           <Attempt className={attempt === 5 ? 'active' : 'inactive'} word={attempts[5]} selectedWord={selectedWord} submitted={submitted5}></Attempt>
         </div>
         <WinModal toggleWin={winModal} setWinModal={setWinModal}></WinModal>
+        <LoseModal toggleLose={loseModal} setLoseModal={setLoseModal}></LoseModal>
         <form onSubmit={check}>
           <input type="text"
           required
