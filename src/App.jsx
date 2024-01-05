@@ -5,7 +5,7 @@ import WinModal from './components/WinModal'
 import LoseModal from './components/LoseModal'
 
 
-const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE', 'DRIVE'];
+const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE', 'DRIVE', 'DRINK', 'JACOB', 'VALOR'];
 const selectedWord = wordCollection[Math.floor(Math.random()*wordCollection.length)]
 
 function App() {
@@ -24,16 +24,21 @@ function App() {
   const check = (e) => {
     e.preventDefault()
     if(!wordCollection.includes(userIn.toUpperCase())) {
-      alert("word not in collection")
+      alert("Word not in collection.")
+    }
+    else if(attempt > attempts.indexOf(userIn)) {
+      alert('Word has already been used dummy.')
     }
     else {
-      
       setActiveSubmit()
       if(userIn.toUpperCase() === selectedWord) {
         setWinModal(true)
       }
-      setAttempt(attempt + 1);
-      setUserIn('')
+      else {
+        setAttempt(attempt + 1);
+        setUserIn('')
+      }
+      
     }
   }
   if(attempt === 6) {
