@@ -5,7 +5,7 @@ import WinModal from './components/WinModal'
 import LoseModal from './components/LoseModal'
 
 
-const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE', 'DRIVE', 'DRINK', 'JACOB', 'VALOR'];
+const wordCollection = ['SPACE', 'SPIKE', 'TRUCK', 'VIOLA', 'MOUSE', 'DRIVE', 'DRINK', 'JACOB', 'VALOR', 'LEARN'];
 const selectedWord = wordCollection[Math.floor(Math.random()*wordCollection.length)]
 
 function App() {
