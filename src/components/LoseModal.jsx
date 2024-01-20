@@ -1,4 +1,4 @@
-function LoseModal({ toggleLose, setLoseModal }) { 
+function LoseModal({ toggleLose, setLoseModal, correctWord }) { 
 
     const closeModal = () => {
         setLoseModal(false)
@@ -10,7 +10,8 @@ function LoseModal({ toggleLose, setLoseModal }) {
                 <div className='modal'>
                     <div className="overlay" onClick={closeModal}></div>
                     <div className="modal-content">
-                        <h2>You Lose XD</h2>
+                        <h2>You Lose HeHeHaha</h2>
+                        <h2>The Correct Word was {correctWord}</h2>
                         <button className="close-modal" onClick={closeModal}>close</button>
                     </div>
                 </div>)
