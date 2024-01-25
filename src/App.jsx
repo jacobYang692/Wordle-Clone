@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import './styles/App.css'
 import Attempt from './components/Attempt'
 import WinModal from './components/WinModal'
 import LoseModal from './components/LoseModal'
